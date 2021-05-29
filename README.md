@@ -12,7 +12,7 @@ To run locally in development:
 
 ```bash
 python3 -m venv my_env
-source myenv/bin/activate
+source my_env/bin/activate
 
 make test
 make dev
