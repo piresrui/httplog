@@ -81,3 +81,11 @@ The implementation of the actual pipeline logic is in a separate module, so it c
 If this was a requirement, then some sort of persistence for the metrics data would be required.
 
 - Logging is done using `print` as a sink. A better solution is to create a proper logging configuration with different levels.
+
+- Error handling is basic, and could stand to be improved.
+
+- Packaging. Currently this will only work on linux (depends on tail, etc...) so that could also be improved.
+
+- Performance. Python isn't the fastest language (in fact it's pretty slow). I'd prefer a Golang for this, but I'm more comfortable in Python to build something to show you.
+
+- Configuration. Configuration is basic, and could stand to allow more things to be defined. (alert window size, metrics lifetime, what metrics to show, etc...)
