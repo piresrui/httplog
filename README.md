@@ -72,25 +72,6 @@ Three separate stages were implemented.
 
 Finally, the `Pipeline` class also launches a thread to periodically log the state of the metrics. The `Metrics` stage stores a new snapshot in a "mocked" in-memory database, so it can be fetched by this thread.
 
-In order to facilitate usage and as requested, a module named `httplogcli` was also implemented, to provide a CLI for interacting with the pipeline.
+In order to facilitate usage a module named `httplogcli` was also implemented, to provide a CLI for interacting with the pipeline.
 The implementation of the actual pipeline logic is in a separate module, so it can be re-used.
 
-## Improvements
-
-- The alerts only keep track of the latest two minutes, meaning we would have to replay the whole log in order to access that data again.
-If this was a requirement, then some sort of persistence for the metrics data would be required.
-
-- Logging is done using `print` as a sink. A better solution is to create a proper logging configuration with different levels.
-
-- Error handling is basic, and could stand to be improved.
-
-- Packaging. Currently this will only work on linux (depends on tail, etc...) so that could also be improved.
-
-- Performance. Python isn't the fastest language (in fact it's pretty slow). I'd prefer a Golang for this, but I'm more comfortable in Python to build something to show you.
-
-- Configuration. Configuration is basic, and could stand to allow more things to be defined. (alert window size, metrics lifetime, what metrics to show, etc...)
-
-
-## Time spent
-
-About 6 hours max. Took longer than expected since I had to get reacquainted with some python-ities.
